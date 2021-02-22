@@ -6,21 +6,7 @@
 //*****************
 
 
-//****Notes****
-// BMD(Binary Model Data) is a format I've created which is derived from Valve's SMD(Studiomdl Data).
-// It has many new features and changes and as the name hints at it, its a binary format much like DMX.
-
-//Initial Structure Ideas?
-//-SMD like bonelist
-//-Can contain multiple mesh pieces
-//-Stores mesh data in triangles
-//-Has a material list too
-//-Has extraInfo list for meta data
-
-
 //****File Format****
-
-
 //*Header nothing special
 typedef struct
 {
