@@ -1,0 +1,121 @@
+//*****************
+//* BMD (Binary Model Data)
+//* Author : Cra0kalo
+//* Website: http://cra0kalo.com
+//* Date: 2014
+//*****************
+
+
+//****File Format****
+typedef  float vec2[2];
+typedef  float vec3[3];
+typedef  float quat4[4];
+typedef  string asciiz;
+typedef int bool;
+#define true  1
+#define false 0
+
+//functions
+long PaddingAlign(long num, int alignTo)
+{
+		if (num % alignTo == 0)
+		{
+			return 0;
+		}
+		else
+		{
+			return alignTo - (num % alignTo);
+		}
+}
+
+bool AlignFS()
+{
+    local int b2skip = PaddingAlign(FTell(),4);
+    FSkip(b2skip);
+    return 1;
+}
+
+//*Header nothing special
+struct
+{
+    char	signature[4];		//BMDC
+    int32	version;
+    int32	unused;		
+    int32 	filesize;
+} BMDHeader; //header of file
+
+
+//*Format metadata
+struct
+{
+    int32	boneCount;
+    int32	materialCount;	
+    int32 	triangleCount;
+} BMDmeta; 
+
+
+
+//*BoneList
+uint32	sectionID;
+uint32 	boneCount;
+local int i;
+for(i = 0; i < boneCount; i++ )
+{
+struct
+{
+	int32	b_id;
+	int32	b_parentIndex;
+	vec3	b_pos;
+	quat4	b_rot;
+	vec3	b_scale;
+	asciiz	b_name;	//note aligned to 4bytes
+    AlignFS();
+} t_bonelist; 
+}
+
+//*MaterialList
+uint32	sectionID;
+uint32 	matCount;
+local int j;
+for(j = 0; j < matCount; j++ )
+{
+struct
+{
+	int32	m_id;
+	asciiz	m_name;	//note aligned to 4bytes
+    AlignFS();
+} t_matlist; 
+}
+
+
+//*TriangleList
+uint32	sectionID;
+uint32 	triCount;
+local int k;
+for(k = 0; k < triCount; k++ )
+{
+struct
+{	
+	int32	matIndex;
+    local int kk;
+    for(kk = 0; kk < 3; kk++)
+    {
+        struct
+        {	
+	        vec3	t_pos;	//position XYZ
+	        vec3	t_nor;	//normals
+	        vec2	t_uv;	//uvs
+	        int32	NumOfBoneLinks;
+            local int l;
+		        for(l = 0; l < NumOfBoneLinks;l++)
+		        {
+			        int32	dcl_blendindice;
+			        float	dcl_blendweight;	
+		        }	
+        } triVert; 
+
+    }
+	
+} t_trilist; 
+}
+

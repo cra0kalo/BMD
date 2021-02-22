@@ -1,7 +1,7 @@
 # BMD
 (BMD) Binary Model Data - File Format
 
-![BMD Logo](https://github.com/cra0kalo/BMD/blob/main/docs/logo.png?raw=true)
+![BMD Logo](https://github.com/cra0kalo/BMD/blob/main/docs/images/logo.png?raw=true)
 
 The BMD file format is a byproduct I created in 2013 to help me manage 3d mesh data extracted from various sources. It's derived from Valve Software's SMD (StudioMDL Data) file format. The idea was to have a bare bones very simple binary file format to store mesh data that had the ability to contain skinning information and bone data.
 
