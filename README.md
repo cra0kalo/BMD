@@ -1,5 +1,4 @@
-# BMD
-(BMD) Binary Model Data - File Format
+# (BMD) Binary Model Data - File Format
 
 ![BMD Logo](https://github.com/cra0kalo/BMD/blob/main/docs/images/logo.png?raw=true)
 
