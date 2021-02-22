@@ -1,6 +1,6 @@
 //*****************
 //* BMD (Binary Model Data)
-//* Author : Cihan(Cra0kalo)
+//* Author : Cra0kalo
 //* Website: http://cra0kalo.com
 //* Date: 2014
 //*****************
