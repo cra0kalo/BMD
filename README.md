@@ -45,5 +45,6 @@ Example: bmdconvert -f OBJ -x Z --src O:/geom/Teapot.obj O:/geom/cTeapot.bmd
 * ?? (You can help decide)
 
 ## Examples
+[![Youtube Video](https://github.com/cra0kalo/BMD/blob/main/docs/images/yt.jpg?raw=true)](https://www.youtube.com/watch?v=TUfqaeI_7GY)
 
 ![Screenshot](https://github.com/cra0kalo/BMD/blob/main/docs/images/screenshot1.png?raw=true)
