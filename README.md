@@ -46,4 +46,4 @@ Example: bmdconvert -f OBJ -x Z --src O:/geom/Teapot.obj O:/geom/cTeapot.bmd
 
 ## Examples
 
-![Screenshot](https://github.com/cra0kalo/BMD/blob/main/docs/images/example_primitives.png?raw=true)
+![Screenshot](https://github.com/cra0kalo/BMD/blob/main/docs/images/screenshot1.png?raw=true)
