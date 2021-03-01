@@ -69,7 +69,7 @@ class bmdFile:
 			BoneRot = NoeQuat.fromBytes(bs.readBytes(16))
 			BoneScale = NoeVec3.fromBytes(bs.readBytes(12))
 			#make matrix
-			boneMtx = BoneRot.toMat43().inverse()
+			boneMtx = BoneRot.toMat43()
 			boneMtx[3] = BonePos
 			boneName = bs.readString()
 			self.alignPosition(bs, 4)
